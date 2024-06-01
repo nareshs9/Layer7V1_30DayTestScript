@@ -147,7 +147,7 @@ class Display15_Lenovo:
         self.select_Notch_60Hz = [185, 880]
         self.select_impedence_tab = [139,625]
         self.select_Impedence_Test_Button = [203,671]
-        self.select_ok_Impedence_Test = [1337,84]
+        self.select_ok_Impedence_Test = [1366,84]
         self.run_Impedence_measurement = [178,773]
         self.select_save_Impedence_Measurement = [179,808]
         self.select_to_delete_edit_path = [1959,84]
@@ -172,7 +172,7 @@ class Display15_Lenovo:
         self.select_to_save = [2291,1474]
         self.select_to_record = [294,85]
         self.select_to_play = [163,83]
-        self.select_to_stop_recording = [121,87]
+        self.select_to_stop_recording = [120,81]
         self.select_close_intan_app = [1895,9]
 
         # startstoprecording parameters
