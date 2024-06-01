@@ -13,18 +13,7 @@ _______________________________________________________________________
 \author  Naresh Sambulu
 _______________________________________________________________________
 
-Requirements:
-V1T-TMS-0005	The test measurement system automated data collection script shall have a capability to perform the following:
-V1T-TMS-0005A    The script shall be able to launch and close the Intan RHX software.
-V1T-TMS-0005B	The script shall be able to set notch filter to 60Hz.
-V1T-TMS-0005C	The script shall be able to create log folder for every run.
-V1T-TMS-0005D	The script shall be able to run impedance measurement test multiple times and save impedance measurement test results in the current log folder.
-V1T-TMS-0005E	The script shall be able to capture required screens and save it in appropriate log folder.
-V1T-TMS-0005F	The script shall be able to select “Sampling Rate” as 20KHz.
-V1T-TMS-0005G	The script shall be able to create and select the appropriate log folder to save the output files on the compute unit that is being recorded.
-V1T-TMS-0005H	The script shall be able to start and stop the recording on Intan RHX software.
-V1T-TMS-0005I	The script shall be able to record and store output files for twenty seconds by default.
-V1T-TMS-0005J	The script shall be able to provide an option for user to program the number of impedance test and data recording sessions.
+Requirements:TECH10585
 """
 import pygetwindow
 import pyautogui
@@ -32,8 +21,8 @@ from PIL import Image
 import os
 import time
 from datetime import datetime
-from supporting_packages_config import Display15
-from supporting_packages_config import Display27
+from supporting_packages_config import Display15_Dell
+from supporting_packages_config import Display15_Lenovo
 import shutil
 import logging
 import sys
@@ -710,13 +699,13 @@ if __name__ == '__main__':
     logging.basicConfig(filename=dir_path+"/"+log_filename, level = logging.INFO)
     logger.info("Started logging")
     #Load the configuration file
-    ScreenSize = sys.argv[2]
-    if int(ScreenSize) == 27:
-        config = Display27()
-        logger.info("Screen Size provided by the user is %s", ScreenSize)
-    if int(ScreenSize) == 15:
-        config = Display15()
-        logger.info("Screen Size provided by the user is %s", ScreenSize)
+    Laptop = sys.argv[2]
+    if Laptop in "Display15_Dell":
+        config = Display15_Dell()
+        logger.info("Laptop provided by the user is %s", Laptop)
+    if Laptop in "Display15_Lenovo":
+        config = Display15_Lenovo()
+        logger.info("Laptop provided by the user is %s", Laptop)
 
     #app_loc = config.intan_path
     logger.info("Intan is located in the path %s", config.intan_path)
