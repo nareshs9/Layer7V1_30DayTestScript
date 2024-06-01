@@ -55,7 +55,7 @@ class Display15_Dell:
         self.select_to_write_file_name = [1385,1003]
         self.select_to_save = [1716,1098]
         self.select_to_record = [253,73]
-        self.select_to_stop_recording = [104,75]
+        self.select_to_stop_recording = [118,86]
         self.select_close_intan_app = [1895,0]
 
         # startstoprecording parameters
@@ -147,7 +147,7 @@ class Display15_Lenovo:
         self.select_Notch_60Hz = [185, 880]
         self.select_impedence_tab = [139,625]
         self.select_Impedence_Test_Button = [203,671]
-        self.select_ok_Impedence_Test = [1366,84]
+        self.select_ok_Impedence_Test = [1366,854]
         self.run_Impedence_measurement = [178,773]
         self.select_save_Impedence_Measurement = [179,808]
         self.select_to_delete_edit_path = [1959,84]
@@ -172,7 +172,7 @@ class Display15_Lenovo:
         self.select_to_save = [2291,1474]
         self.select_to_record = [294,85]
         self.select_to_play = [163,83]
-        self.select_to_stop_recording = [120,81]
+        self.select_to_stop_recording = [121,87]
         self.select_close_intan_app = [1895,9]
 
         # startstoprecording parameters
@@ -189,6 +189,6 @@ class Display15_Lenovo:
         self.select_stopbutton = [87,58]
 
         # Number of times to run impedance, probemap, start and stop
-        self.number_of_times_inner_loop = 18
+        self.number_of_times_inner_loop = 1
         self.probemap_filename = "config"
 
