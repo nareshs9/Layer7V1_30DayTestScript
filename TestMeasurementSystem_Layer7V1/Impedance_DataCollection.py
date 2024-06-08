@@ -23,6 +23,7 @@ import time
 from datetime import datetime
 from supporting_packages_config import Display15_Dell
 from supporting_packages_config import Display15_Lenovo
+from supporting_packages_config import Display12_Microsoft
 import shutil
 import logging
 import sys
@@ -229,24 +230,31 @@ class ImpedanceMeasurement:
         time.sleep(2)
         pyautogui.press('enter')
         time.sleep(2)
+        logger.info("Impedance: Delete and enter new path has been executed.")
 
 
-
+        logger.info("The next co-ordindates to write the file name is %d", self.config_ele.select_to_write_file_name)
+        move_ok = pyautogui.moveTo(self.config_ele.select_to_write_file_name[0], self.config_ele.select_to_write_file_name[1])
+        time.sleep(1)
         click_ok = pyautogui.click(self.config_ele.select_to_write_file_name[0], self.config_ele.select_to_write_file_name[1])
-        time.sleep(5)
+        time.sleep(1)
         pyautogui.press('delete')
+        time.sleep(2)
         pyautogui.write(self.impedance_fname)
+        time.sleep(5)
 
-
+        #time.sleep(5)
         # save button pressed on save impedance window
         logger.info("Save the impedance file")
+        move_ok = pyautogui.moveTo(self.config_ele.select_to_save[0], self.config_ele.select_to_save[1])
+        time.sleep(2)
         click_ok = pyautogui.click(self.config_ele.select_to_save[0], self.config_ele.select_to_save[1])
         time.sleep(2)
         self.window = pygetwindow.getWindowsWithTitle('intan')[0]
         screenObj = ScreenCapture(self.screens_path, self.window, "save4", True)
         screen_saved = screenObj.saveScreenShots()
         
-        # Start and stop recording every 10 seconds to new file.
+        # Start and stop recording every 20 seconds to new file.
         
         logger.info("Click on folder icon")
         click_ok = pyautogui.click(self.config_ele.select_folder_icon[0], self.config_ele.select_folder_icon[1])
@@ -622,13 +630,10 @@ class ImpedanceMeasurement:
         time.sleep(2)
         """ # Remove comment later
         logger.info("stop the playing")
-        move_to = pyautogui.moveTo(self.config_ele.select_display_ports[0], self.config_ele.select_display_ports[1])
+
+        move_to = pyautogui.moveTo(self.config_ele.select_to_stop_recording[0], self.config_ele.select_to_stop_recording[1])
         time.sleep(2)
-        click_ok = pyautogui.click(self.config_ele.select_display_ports[0], self.config_ele.select_display_ports[1])
-        time.sleep(2)
-        move_to = pyautogui.moveTo(self.config_ele.select_stopbutton[0], self.config_ele.select_stopbutton[1])
-        time.sleep(2)
-        click_ok = pyautogui.click(self.config_ele.select_stopbutton[0], self.config_ele.select_stopbutton[1])
+        click_ok = pyautogui.click(self.config_ele.select_to_stop_recording[0], self.config_ele.select_to_stop_recording[1])
         time.sleep(10)
         
 
@@ -705,6 +710,10 @@ if __name__ == '__main__':
         logger.info("Laptop provided by the user is %s", Laptop)
     if Laptop in "Display15_Lenovo":
         config = Display15_Lenovo()
+        logger.info("Laptop provided by the user is %s", Laptop)
+
+    if Laptop in "Display12_Microsoft":
+        config = Display12_Microsoft()
         logger.info("Laptop provided by the user is %s", Laptop)
 
     #app_loc = config.intan_path
