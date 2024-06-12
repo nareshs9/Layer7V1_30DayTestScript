@@ -38,16 +38,16 @@ class Display15_Dell:
         self.select_to_write_file_name = [1385,1003]
         self.select_to_save = [1716,1098]
         self.select_tools = [200, 45]
-        self.select_tools_probmap = [200,165]
+        self.select_tools_probemap = [200,165]
         self.select_maximize_probemap_window = [1172,261]
-        self.select_probemap_file = [921, 537]
-        self.select_probemap_loadfile = [921,557]
-        self.select_probemap_config_file_path = [1389,60]
-        self.select_probemap_config_file = [355, 227]
-        self.select_open_probemap_config_file = [1700,1096]
-        self.select_best_fit_probmap = [1896, 85]
-        self.select_ohm_icon_probemap = [1900,505]
-        self.select_close_probemap = [1887,12]
+        self.select_probemap_file = [15, 45]
+        self.select_probemap_loadfile = [19,69]
+        self.select_probemap_config_file_path = [1465,68]
+        self.select_probemap_config_file = [288, 200]
+        self.select_open_probemap_config_file = [1682,1095]
+        self.select_best_fit_probmap = [1899, 87]
+        self.select_ohm_icon_probemap = [1900,497]
+        self.select_close_probemap = [1883,9]
 
         # Overnight Test Execution - 1st April 2024
         self.select_folder_icon = [213,78]
@@ -55,6 +55,7 @@ class Display15_Dell:
         self.select_to_write_file_name = [1385,1003]
         self.select_to_save = [1716,1098]
         self.select_to_record = [253,73]
+        self.select_to_play = [141,70]
         self.select_to_stop_recording = [118,86]
         self.select_close_intan_app = [1895,0]
 
@@ -70,6 +71,10 @@ class Display15_Dell:
         self.select_portG = [527,1040]
         self.select_portH = [484,1036]
         self.select_stopbutton = [105,75]
+
+        # Number of times to run impedance, probemap, start and stop
+        self.number_of_times_inner_loop = 1
+        self.probemap_filename = "config"
 
 
 
